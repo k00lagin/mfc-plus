@@ -1,10 +1,21 @@
 {
-  "background": { "scripts": ["background/index.js"] },
+  "manifest_version": 3,
+  "action": { "default_popup": "popup/index.html" },
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
-      "js": ["content/index.js"],
-      "matches": ["https://*/*", "http://*/*"]
+      "js": ["content/arm-esia.js"],
+      "matches": ["https://esia.gosuslugi.ru/ra/*/*"]
+    },
+    {
+      "js": ["content/my-documents-mfc-plus.js"],
+      "matches": ["https://моидокументы.рф/mfc-plus"]
+    },
+    {
+      "js": ["content/my-documents-mfc.js"],
+      "matches": ["https://моидокументы.рф/mfc/**/*"]
     }
-  ],
-  "browser_action": { "default_popup": "popup/index.html" }
+  ]
 }

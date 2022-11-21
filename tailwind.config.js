@@ -1,11 +1,10 @@
 module.exports = {
-  purge: ["./src/popup/**/*.{svelte,html}"],
-  darkMode: false, // or 'media' or 'class'
+  purge: ["./src/popup/**/*.{svelte,html}","./content-src/**/*.{svelte,html}"],
   theme: {
     extend: {},
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
